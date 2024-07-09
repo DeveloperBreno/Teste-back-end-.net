@@ -37,7 +37,7 @@ agora é só iniciar o projeto webApi
 
 As atualizações de usuários são feitas por um worker na pasta "Workers", que lê da fila para inserir no banco de dados então você pode executar o projeto "CreateAndEditUser"
 
-EM resumo podemos criar uma fila e um worker (Consumer) para cada atualização de entidade no banco de dados, assim garantindo uma manutenção no sistema e garantindo as falhas.
+Em resumo podemos criar uma fila e um worker (Consumer) para cada atualização de entidade no banco de dados, assim garantindo uma manutenção no sistema e garantindo as falhas.
 nesse projeto caso dê algum erro em operações de insert, update ou delete o worker joga para uma outra fila indicando que teve falha ao tentar processar o obj essa mesma logica pode ser aplicada para a entidade "Tarefa" e caso o sistema venha a crescer podemos ter mais workers, todos os worker "Consumers" faz a importação das DLLs da aplicação sendo assim mantendo o domínio do negócio independente da implementação do sistema ou solução técnica.
 
 
