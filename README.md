@@ -1,32 +1,27 @@
-## para iniciar o sistema localmente siga as instruções 
+## Para iniciar o sistema localmente siga as instruções 
 
 Para fazer as configurações você precisará instalar o docker em sua maquina.
 
-
-
-Crie um container docekr com o serviço do sql server
-
+Crie um container docekr com o serviço do sql server (opcional caso já tenha algum serviço de Sql Server)
 
 docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=SuaSenhaAqui" && 
   -p 1433:1433 --name sqlserver &&
   -d mcr.microsoft.com/mssql/server:latest
 
+Crie um container com o serviço de filas rabbitmq (ou utilize um existente)
 
+faça um pull do rabbitmq
+docker pull rabbitmq:3.11-management
 
-  Crie um container com o serviço de filas rabbitmq
-
-  docker pull rabbitmq:3.11-management
-
+inicie o container
 docker run -d --hostname rabbitmq --name rabbitmq -p 5672:5672 -p 15672:15672 -e RABBITMQ_DEFAULT_PASS="DcpmQP3pFjNFrRJFNDwTRNwdAIKlvlHMCNrsC67Ijzc" rabbitmq:3.11-management
 
-
-
 ## Faça update database
+No visual studio, seleciona o webApi como startap up project (projeto de inicialização)
 
-no visual studio, seleciona o webApi como startap up project (projeto de inicialização)
+no Package Manager Console selecione o projeto Infraestrutura e execute esse comando:
 
-no package Manager Console selecione o projeto Infraestrutura e execute esse comando:
-
+(mas apenas exeute esse comando caso a pasta migrations esteja vazia)
 Add-Migration Criacao -Context Contexto 
 
 para atualizar no banco:
