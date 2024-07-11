@@ -1,0 +1,16 @@
+<div *ngIf="tarefa">
+<h1 mat-dialog-title>Deseja confirmar a exclução da tarefa?</h1>
+<div mat-dialog-content>
+  <p>Descrição: {{tarefa.descricao}}</p>
+  <p>Status: {{tarefa.status}}</p>
+
+    <mat-form-field>
+      <mat-label>Data:</mat-label>
+      <input matInput id="data" type="datetime-local" class="form-control text-dark" [(ngModel)]="tarefa.data" name="data" placeholder="Insira a data e hora!" required readonly>
+    </mat-form-field>
+    
+</div>
+<div mat-dialog-actions>
+  <button mat-button  mat-raised-button color="warn" (click)="excluir()">Confirmar</button>
+</div>
+</div>

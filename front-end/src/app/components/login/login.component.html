@@ -1,0 +1,33 @@
+
+
+
+<mat-card>
+  <h1>Login</h1>
+
+
+  <form [formGroup]="loginForm" (ngSubmit)="submit()">
+    
+
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label>Titulo:</mat-label>
+        <input matInput id="email" type="text" class="form-control text-dark" formControlName="email" placeholder="E-mail" required>
+      </mat-form-field>
+    </div>
+
+
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label>Senha:</mat-label>
+        <input matInput id="email" type="text" class="form-control text-dark"
+        formControlName="senha" placeholder="senha" required type="password">
+      </mat-form-field>
+    </div>
+
+
+    <button type="submit">Login</button>
+  </form>
+
+
+
+</mat-card>

@@ -1,0 +1,47 @@
+<mat-card>
+    <h1>{{btnTitulo}}</h1>
+
+  <form  [formGroup]="tarefaForm" (ngSubmit)="submit()" #formDir="ngForm">
+  <input type="hidden" value="" formControlName="id">
+
+  <div class="input-box">
+    <mat-form-field>
+      <mat-label>Titulo:</mat-label>
+      <input matInput id="titulo" type="text" class="form-control text-dark" formControlName="titulo" placeholder="Insira um titulo" required>
+    </mat-form-field>
+  </div>
+  <div class="input-box">
+    <mat-form-field>
+      <mat-label>Descrição:</mat-label>
+      <input matInput id="descricao" type="text" class="form-control text-dark" formControlName="descricao" placeholder="Insira uma descrição" required>
+    </mat-form-field>
+  </div>
+
+  <div class="input-box">
+    <mat-form-field>
+      <mat-label>Data:</mat-label>
+      <input matInput id="data" type="datetime-local" class="form-control text-dark" formControlName="data" placeholder="Insira a data e hora!" required>
+    </mat-form-field>
+  </div>
+
+  <div  class="input-box">
+  <mat-form-field>
+    <mat-label>Status:</mat-label>
+    <mat-select id="status" class="form-select "  formControlName="status" required>
+      <mat-option value="To do">To do</mat-option>
+      <mat-option value="Doing">Doing</mat-option>
+      <mat-option value="Done">Done</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  </div>
+
+<div  class="btn-box">
+    <button type="submit" class="btn btn-success w-50" [disabled]="!tarefaForm.valid"  mat-raised-button color="accent" >{{btnAcao}}</button>
+    <button class="btn btn-primary w-50" routerLink=""   mat-raised-button >Voltar</button>
+</div>
+
+
+</form>
+
+</mat-card>

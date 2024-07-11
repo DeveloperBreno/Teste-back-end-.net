@@ -1,0 +1,5 @@
+
+  <div *ngIf="tarefa">
+    <app-tarefa-form [btnAcao]="btnAcao" [btnTitulo]="btnTitulo" [dadosTarefa]="tarefa" (onSubmit)="editTarefa($event)" ></app-tarefa-form>
+  </div>
+

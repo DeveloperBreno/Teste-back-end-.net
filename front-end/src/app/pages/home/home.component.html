@@ -1,0 +1,53 @@
+<mat-card>
+
+  <div class="tarefa-box">
+    <button routerLink="cadastro" mat-raised-button color="primary">Cadastrar nova tarefa</button>
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label>Procurar:</mat-label>
+        <input matInput type="text" placeholder="Pesquizar por tarefa" (input)="search($event)">
+      </mat-form-field>
+    </div>
+  </div>
+
+
+
+  <table mat-table [dataSource]="tarefas" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="titulo">
+      <th mat-header-cell *matHeaderCellDef>Titulo</th>
+      <td mat-cell *matCellDef="let tarefa"> {{tarefa.titulo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let tarefa"> {{tarefa.status}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="data">
+      <th mat-header-cell *matHeaderCellDef>Data</th>
+      <td mat-cell *matCellDef="let tarefa"> {{tarefa.data}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Ações">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let tarefa">
+        <a routerLink="editar/{{tarefa.id}}" mat-raised-button color="accent">Editar</a>
+      </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="Excluir">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let tarefa">
+        <mat-dialog-actions>
+          <a  (click)="openDialog(tarefa.id)"  mat-raised-button color="warn">Excluir</a>
+        </mat-dialog-actions>
+      </td>
+  </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+  </table>
+
+</mat-card>
