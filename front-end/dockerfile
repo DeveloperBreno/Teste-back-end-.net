@@ -1,5 +1,5 @@
 # Estágio 1: Build do aplicativo Angular
-FROM node:14.18.0 as build
+FROM node:18.20.4 as build
 
 WORKDIR /app
 
