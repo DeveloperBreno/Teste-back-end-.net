@@ -10,11 +10,15 @@ COPY package*.json ./
 # Install the dependencies
 RUN npm install
 
+# Debug step: List the contents of the working directory and node_modules
+RUN ls -la /app
+RUN ls -la /app/node_modules
+
 # Copy the rest of the application to the working directory
 COPY . .
 
 # Build the Angular application
-RUN npm run build
+RUN npm run build --prod
 
 # Stage 2: Serve the Angular application with Nginx
 FROM nginx:alpine
