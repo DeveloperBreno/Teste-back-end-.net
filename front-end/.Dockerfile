@@ -1,5 +1,4 @@
-FROM node:18-alpine
-
+FROM chainguard/node-lts:latest
 WORKDIR /app
 
 # Instala as dependências do projeto
@@ -13,7 +12,7 @@ COPY . .
 RUN ng build --prod
 
 # Copia os arquivos buildados para a pasta dist
-COPY dist/your-project-name /usr/share/nginx/html
+COPY dist/angular-estrutura /usr/share/nginx/html
 
 # Instala o Nginx
 RUN apk add --no-cache nginx
