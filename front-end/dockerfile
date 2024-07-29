@@ -1,10 +1,12 @@
 FROM chainguard/node-lts:latest
 WORKDIR /app
 
-# Instala as dependências do projeto
+# Install npm
+RUN apk add --no-cache npm
+
+# Install project dependencies
 COPY package*.json ./
 RUN npm install
-
 # Copia os arquivos do projeto
 COPY . .
 

@@ -4282,7 +4282,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\4578100589\\.nuget\\packages\\": {}
+    "C:\\Users\\4578100589\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
@@ -4293,6 +4294,9 @@
       "packagesPath": "C:\\Users\\4578100589\\.nuget\\packages\\",
       "outputPath": "C:\\dev\\teste_back_end_git\\back-end\\Enditades\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
         "C:\\Users\\4578100589\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
