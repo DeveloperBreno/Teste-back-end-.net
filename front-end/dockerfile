@@ -3,6 +3,8 @@ WORKDIR /app
 
 # Instala as dependências do projeto
 COPY package*.json ./
+
+RUN ls
 RUN npm install
 
 # Copia os arquivos do projeto
